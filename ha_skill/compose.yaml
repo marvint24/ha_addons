@@ -1,0 +1,6 @@
+services:
+  ha-alexa-skill:
+    image: ha-alexa-skill
+    build:
+      context: .
+    restart: unless-stopped
