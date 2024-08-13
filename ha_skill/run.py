@@ -82,12 +82,12 @@ def poll_for_work(session,options):
     )
 
     token = os.environ.get('SUPERVISOR_TOKEN')
-    if options['HA Token']:
+    if 'HA Token' in options:
         token=options['HA Token']
     assert token is not None
 
     request_url = 'http://supervisor/core/api/alexa/smart_home'
-    if options['HA Base URL']:
+    if 'HA Base URL' in options:
         request_url=os.path.join(options['HA Base URL'],'api/alexa/smart_home')
     log.debug(f'request_url: "{request_url}"')    
         
